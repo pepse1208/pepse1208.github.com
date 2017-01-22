@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣电影</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+
+</head>
+<body ng-app="app">
+<!-- 1、导航栏 -->
+
+    <div class="nav navbar-inverse navbar-fixed-top">
+
+        <!-- 标题 -->
+        <a href="#" class="navbar-brand">豆瓣电影</a>
+        <!-- 右边内容 -->
+
+        <div class="navbar-header">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- ###标题绑定 navTitle -->
+                    <li><a href="">{{navTitle}}</a> </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+<!-- 2、内容 -->
+    <div class="container-fluid">
+        <!-- 1.1 左边的菜单 -->
+            <div class="row">
+                <div class="col-sm-3 col-md-2 siderbar hidden-xs">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active"><a href="#/list/in_theaters" select-link>正在上映</a></li>
+                            <li><a href="#/list/coming_soon" select-link>即将上映</a></li>
+                            <li><a href="#/list/top250" select-link>TOP250</a></li>
+                        </ul>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="输入搜索的电影">
+                            <span class="input-group-addon">
+                                🔍搜索
+                            </span>
+                        </div>
+                </div>
+            </div>
+
+        <!-- 1.2 右边的内容 -->
+        <!-- view的挂载点 -->
+            <div class="col-sm-9 col-md-10 col-sm-offset-3 col-md-offset-2 main" ng-view>右边</div>
+    </div>
+
+
+<!--<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script src="libs/angular/angular.min.js"></script>
+<script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="libs/angular-route/angular-route.min.js"></script>
+
+<script src="app.js"></script>
+<script src="movie/movie-list.js"></script>
+<script src="movie/movie-detail.js"></script>
+
+</body>
+</html>
+
+
